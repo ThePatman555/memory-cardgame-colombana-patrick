@@ -16,6 +16,7 @@ let codeSet;
 let code1Selected;
 let code2Selected;
 let gameStart = document.querySelector('#start');
+
 let gameOver = false;
 
 gameStart.addEventListener('click', gameBegins);
@@ -34,11 +35,30 @@ function gameBegins() {
     errors = 0;
     document.querySelector('#errors').innerText = errors
     codesFlipped = 0;
-    document.querySelector('#board').outerHTML = "<div id='board'></div>";
-    shuffleSet();
-    displaySet();
+    document.querySelector('#board').outerHTML = "<div id='board'><div id='countdown'></div></div>";
+    countDown();
     gameStart.style.display = 'none';
 };
+
+function countDown(){
+    let count = 3;
+    let cdTimer = document.querySelector('#countdown')
+    cdTimer.style.display = 'block'
+    cdTimer.innerText = 3;
+    const countdownTimer = setInterval(function(){
+        count --;
+        console.log(count);
+        cdTimer.innerText = count;
+        if (count === 0){
+            clearInterval(countdownTimer);
+            cdTimer.style.display = 'none'
+            shuffleSet();
+            displaySet();
+        }
+    }, 1000)
+}
+
+
 
 //concats the array of codes with itself so there are pairs - then randomizes the set upon page load
 function shuffleSet() {
