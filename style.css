@@ -1,0 +1,46 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:center;
+}
+
+#board{
+    height: 532px;
+    width: 475px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: darkred;
+    border: 10px solid green;
+}
+
+#timer{
+    height:30px;
+    width: 115px;
+    margin: 0 auto;
+    margin-top: 5px;
+    background-color: lightgrey;
+    border: 2px solid black;
+    padding:0px;
+    font-size:20px; 
+}
+
+#start{
+    width:auto;
+    height: auto;
+    margin-top: 5px;
+    background-color: darkred;
+    color: white;
+    border: 2px solid black;
+}
+
+img{
+    width: 20%;
+    height: 15%;
+    margin: 11px;
+    border-radius: 10px;
+    border:1px solid black;
+}
+
+img:hover{
+    border:2px solid blue;
+}
